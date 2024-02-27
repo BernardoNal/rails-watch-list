@@ -1,8 +1,11 @@
-<h1>All lists</h1>
+<nav class="navbar navbar-light bg-light justify-content-between">
+ <h1>All lists</h1>
+ <%= link_to "New list", new_list_path , class: "btn btn-primary"%>
+</nav>
 
+<div class="container">
 <% @lists.each do |list|%>
 <%= link_to list.name,list_path(list)%>
 <br>
 <% end %>
-
-<%= link_to "New list", new_list_path , class: "btn btn-primary"%>
+</div>

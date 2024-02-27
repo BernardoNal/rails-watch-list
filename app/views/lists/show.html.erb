@@ -8,7 +8,10 @@
     <img src=<%=movie.poster_url%> alt="">
     <div class="card-footer border">
           <p><%=bookmark.comment %></p>
-        </div>
+          <div>
+            <%= link_to "Delete", bookmark_path(@list) , data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-danger my-2"%>
+          </div>
+    </div>
     </div>
 <% end %>
 <div>
