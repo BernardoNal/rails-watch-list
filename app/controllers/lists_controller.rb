@@ -19,7 +19,6 @@ class ListsController < ApplicationController
   # POST /lists or /lists.json
   def create
     @list = List.new(list_params)
-
     respond_to do |format|
       if @list.save
         format.html { redirect_to list_url(@list), notice: "list was successfully created." }
@@ -39,6 +38,6 @@ class ListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def list_params
-      params.require(:list).permit(:name)
+      params.require(:list).permit(:name, :photo)
     end
 end
